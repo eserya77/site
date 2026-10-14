@@ -59,8 +59,9 @@ gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => {
     tl.to(images[i], { scale: 1.08, duration: 0.7, ease: "power3.inOut" }, at);
   });
 
-  // La barra pasa a crema cuando la foto ya ocupa casi todo
-  tl.to(bar, { color: "#fff6ee", duration: 0.6 }, steps - 0.9);
+  // La barra cambia a --color-sobre-foto cuando la foto ya ocupa casi todo
+  const onPhoto = getComputedStyle(document.documentElement).getPropertyValue("--color-sobre-foto").trim();
+  tl.to(bar, { color: onPhoto, duration: 0.6 }, steps - 0.9);
 
   // Pausa breve a pantalla completa antes de soltar el pin
   tl.to({}, { duration: 0.5 });

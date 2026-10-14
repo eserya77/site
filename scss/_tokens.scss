@@ -1,12 +1,5 @@
 @use "sass:math";
 
-// ─── Paleta (portada "Pichoncita") ─────────────────────────────────────
-$chicle: #ff9ec5;    // fondo
-$fucsia: #f2185e;    // firma, acentos
-$crema: #fff6ee;     // nombre gigante
-$lima: #dcff5c;      // detalle puntual
-$tinta: #4a0f2b;     // texto
-
 // ─── Tipografía ────────────────────────────────────────────────────────
 $font-sans: "Archivo", system-ui, sans-serif;
 $font-sign: "Herr Von Muellerhoff", cursive;
@@ -33,10 +26,39 @@ $base-h: 900;
 }
 
 :root {
-  --chicle: #{$chicle};
-  --fucsia: #{$fucsia};
-  --crema: #{$crema};
-  --lima: #{$lima};
-  --tinta: #{$tinta};
+  // ─── Paleta base: "luz de luna" (bio_killary.md) ────────────────────
+  // Cambiar la paleta = cambiar estos valores.
+  --luna: #eceaf1;       // plata lunar clara
+  --noche: #15163a;      // azul noche
+  --magenta: #e5007e;    // magenta eléctrico
+  --violeta: #6a2bd8;    // violeta psicodélico
+  --ambar: #ffb43a;      // destello cálido
+  --blanco: #ffffff;
+
+  // Plata cromada del nombre (de claro a oscuro y vuelta)
+  --plata-1: #ffffff;
+  --plata-2: #b8b4c6;
+  --plata-3: #8d88a0;
+  --plata-4: #e4e1ea;
+
+  // ─── Roles: qué color usa cada cosa ─────────────────────────────────
+  --color-fondo: var(--luna);
+  --color-texto: var(--noche);
+  --color-acento: var(--magenta);       // firma, números, hovers
+  --color-etiqueta: var(--violeta);     // Redes, Bio, Último single…
+  --color-calido: var(--ambar);         // botón de video
+  --color-tarjeta: var(--blanco);       // tarjeta del single
+  --color-sobre-foto: var(--blanco);    // barra cuando la foto cubre todo
+  --color-halo: var(--blanco);          // luz lunar detrás de la foto
+
+  --nombre-gradiente: linear-gradient(
+    180deg,
+    var(--plata-1) 8%,
+    var(--plata-2) 46%,
+    var(--plata-3) 60%,
+    var(--plata-4) 100%
+  );
+  --grano-opacidad: 0.06;
+
   --gutter: #{fl(32)};
 }

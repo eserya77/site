@@ -23,7 +23,7 @@
 
     svg {
       width: fl(20);
-      fill: var(--fucsia);
+      fill: var(--color-acento);
     }
   }
 
@@ -33,7 +33,7 @@
     gap: fl(32);
 
     a:hover {
-      color: var(--fucsia);
+      color: var(--color-acento);
     }
   }
 
@@ -46,7 +46,7 @@
     border: 1px solid currentColor;
 
     &:hover {
-      color: var(--fucsia);
+      color: var(--color-acento);
     }
   }
 }

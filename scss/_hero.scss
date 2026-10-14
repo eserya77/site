@@ -7,7 +7,33 @@ $photo-w: fl(350);
   height: 100vh;
   min-height: 720px;
   overflow: hidden;
-  background: var(--chicle);
+  background: var(--color-fondo);
+
+  // Luz lunar detrás de la foto
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: radial-gradient(
+      ellipse 42% 58% at 50% 60%,
+      var(--color-halo) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+
+  // Grano cinematográfico sobre todo (menos la barra)
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 9;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: var(--grano-opacidad);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
 
   // ─── Nombre gigante ─────────────────────────────────────────────────
   &__name {
@@ -24,8 +50,13 @@ $photo-w: fl(350);
     text-indent: -0.06em; // compensa el tracking final para centrar
     text-align: center;
     text-transform: uppercase;
-    color: var(--crema);
     white-space: nowrap;
+    // Plata cromada
+    color: transparent;
+    background: var(--nombre-gradiente);
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: drop-shadow(0 1px 0 var(--blanco)) drop-shadow(0 #{fl(10)} #{fl(24)} rgba(21, 22, 58, 0.12));
   }
 
   // ─── Firma manuscrita ───────────────────────────────────────────────
@@ -37,7 +68,7 @@ $photo-w: fl(350);
     font-family: $font-sign;
     font-size: fl(250);
     line-height: 1;
-    color: var(--fucsia);
+    color: var(--color-acento);
     transform: rotate(-9deg);
     pointer-events: none;
   }
@@ -59,7 +90,7 @@ $photo-w: fl(350);
     width: 100%;
     aspect-ratio: 1067 / 1474;
     overflow: hidden;
-    background: var(--tinta);
+    background: var(--color-texto);
 
     img {
       position: absolute;
@@ -90,7 +121,7 @@ $photo-w: fl(350);
 
     b {
       font-weight: 700;
-      color: var(--fucsia);
+      color: var(--color-acento);
     }
   }
 
@@ -111,11 +142,11 @@ $photo-w: fl(350);
       width: fl(30);
       height: fl(30);
       border-radius: 50%;
-      background: var(--crema);
+      background: var(--color-calido);
 
       svg {
         width: fl(12);
-        fill: var(--fucsia);
+        fill: var(--color-texto);
       }
     }
   }
@@ -134,11 +165,11 @@ $photo-w: fl(350);
     a span {
       display: inline-block;
       width: fl(28);
-      color: var(--fucsia);
+      color: var(--color-acento);
     }
 
     a:hover {
-      color: var(--fucsia);
+      color: var(--color-acento);
     }
   }
 
@@ -166,7 +197,7 @@ $photo-w: fl(350);
     border-bottom: 1px solid currentColor;
 
     span {
-      color: var(--fucsia);
+      color: var(--color-acento);
     }
   }
 
@@ -194,7 +225,7 @@ $photo-w: fl(350);
   gap: fl(12);
   width: fl(250);
   padding: fl(8);
-  background: var(--crema);
+  background: var(--color-tarjeta);
 
   img {
     width: fl(60);
@@ -221,7 +252,7 @@ $photo-w: fl(350);
     @include micro;
     align-self: flex-start;
     font-size: fl(10);
-    color: var(--fucsia);
+    color: var(--color-acento);
     border-bottom: 1px solid currentColor;
   }
 }
@@ -231,7 +262,7 @@ $photo-w: fl(350);
   display: grid;
   place-items: center;
   height: 100vh;
-  background: var(--crema);
+  background: var(--color-tarjeta);
 
   p {
     @include micro;

@@ -15,8 +15,8 @@ html {
 
 body {
   font-family: $font-sans;
-  color: var(--tinta);
-  background: var(--chicle);
+  color: var(--color-texto);
+  background: var(--color-fondo);
 }
 
 img {
@@ -43,5 +43,5 @@ button {
   display: block;
   margin-bottom: fl(12);
   font-size: fl(10);
-  color: var(--fucsia);
+  color: var(--color-etiqueta);
 }

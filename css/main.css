@@ -1,9 +1,30 @@
 :root {
-  --chicle: #ff9ec5;
-  --fucsia: #f2185e;
-  --crema: #fff6ee;
-  --lima: #dcff5c;
-  --tinta: #4a0f2b;
+  --luna: #eceaf1;
+  --noche: #15163a;
+  --magenta: #e5007e;
+  --violeta: #6a2bd8;
+  --ambar: #ffb43a;
+  --blanco: #ffffff;
+  --plata-1: #ffffff;
+  --plata-2: #b8b4c6;
+  --plata-3: #8d88a0;
+  --plata-4: #e4e1ea;
+  --color-fondo: var(--luna);
+  --color-texto: var(--noche);
+  --color-acento: var(--magenta);
+  --color-etiqueta: var(--violeta);
+  --color-calido: var(--ambar);
+  --color-tarjeta: var(--blanco);
+  --color-sobre-foto: var(--blanco);
+  --color-halo: var(--blanco);
+  --nombre-gradiente: linear-gradient(
+    180deg,
+    var(--plata-1) 8%,
+    var(--plata-2) 46%,
+    var(--plata-3) 60%,
+    var(--plata-4) 100%
+  );
+  --grano-opacidad: 0.06;
   --gutter: min(2.2222222222vw, 3.5555555556vh);
 }
 
@@ -22,8 +43,8 @@ html {
 
 body {
   font-family: "Archivo", system-ui, sans-serif;
-  color: var(--tinta);
-  background: var(--chicle);
+  color: var(--color-texto);
+  background: var(--color-fondo);
 }
 
 img {
@@ -54,7 +75,7 @@ button {
   display: block;
   margin-bottom: min(0.8333333333vw, 1.3333333333vh);
   font-size: min(0.6944444444vw, 1.1111111111vh);
-  color: var(--fucsia);
+  color: var(--color-etiqueta);
 }
 
 .bar {
@@ -79,7 +100,7 @@ button {
 }
 .bar__logo svg {
   width: min(1.3888888889vw, 2.2222222222vh);
-  fill: var(--fucsia);
+  fill: var(--color-acento);
 }
 .bar__nav {
   font-size: min(0.7638888889vw, 1.2222222222vh);
@@ -92,7 +113,7 @@ button {
   gap: min(2.2222222222vw, 3.5555555556vh);
 }
 .bar__nav a:hover {
-  color: var(--fucsia);
+  color: var(--color-acento);
 }
 .bar__booking {
   font-size: min(0.7638888889vw, 1.2222222222vh);
@@ -108,7 +129,7 @@ button {
   border: 1px solid currentColor;
 }
 .bar__booking:hover {
-  color: var(--fucsia);
+  color: var(--color-acento);
 }
 
 .hero {
@@ -116,7 +137,25 @@ button {
   height: 100vh;
   min-height: 720px;
   overflow: hidden;
-  background: var(--chicle);
+  background: var(--color-fondo);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(ellipse 42% 58% at 50% 60%, var(--color-halo) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 9;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: var(--grano-opacidad);
+  mix-blend-mode: multiply;
+  pointer-events: none;
 }
 .hero__name {
   position: absolute;
@@ -132,8 +171,12 @@ button {
   text-indent: -0.06em;
   text-align: center;
   text-transform: uppercase;
-  color: var(--crema);
   white-space: nowrap;
+  color: transparent;
+  background: var(--nombre-gradiente);
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 1px 0 var(--blanco)) drop-shadow(0 min(0.6944444444vw, 1.1111111111vh) min(1.6666666667vw, 2.6666666667vh) rgba(21, 22, 58, 0.12));
 }
 .hero__signature {
   position: absolute;
@@ -143,7 +186,7 @@ button {
   font-family: "Herr Von Muellerhoff", cursive;
   font-size: min(17.3611111111vw, 27.7777777778vh);
   line-height: 1;
-  color: var(--fucsia);
+  color: var(--color-acento);
   transform: rotate(-9deg);
   pointer-events: none;
 }
@@ -160,7 +203,7 @@ button {
   width: 100%;
   aspect-ratio: 1067/1474;
   overflow: hidden;
-  background: var(--tinta);
+  background: var(--color-texto);
 }
 .hero__media img {
   position: absolute;
@@ -190,7 +233,7 @@ button {
 }
 .hero__caption b {
   font-weight: 700;
-  color: var(--fucsia);
+  color: var(--color-acento);
 }
 .hero__watch {
   font-size: min(0.7638888889vw, 1.2222222222vh);
@@ -214,11 +257,11 @@ button {
   width: min(2.0833333333vw, 3.3333333333vh);
   height: min(2.0833333333vw, 3.3333333333vh);
   border-radius: 50%;
-  background: var(--crema);
+  background: var(--color-calido);
 }
 .hero__watch-dot svg {
   width: min(0.8333333333vw, 1.3333333333vh);
-  fill: var(--fucsia);
+  fill: var(--color-texto);
 }
 .hero__social {
   font-size: min(0.7638888889vw, 1.2222222222vh);
@@ -238,10 +281,10 @@ button {
 .hero__social a span {
   display: inline-block;
   width: min(1.9444444444vw, 3.1111111111vh);
-  color: var(--fucsia);
+  color: var(--color-acento);
 }
 .hero__social a:hover {
-  color: var(--fucsia);
+  color: var(--color-acento);
 }
 .hero__bio {
   position: absolute;
@@ -269,7 +312,7 @@ button {
   border-bottom: 1px solid currentColor;
 }
 .hero__cta span {
-  color: var(--fucsia);
+  color: var(--color-acento);
 }
 .hero__foot {
   font-size: min(0.7638888889vw, 1.2222222222vh);
@@ -298,7 +341,7 @@ button {
   gap: min(0.8333333333vw, 1.3333333333vh);
   width: min(17.3611111111vw, 27.7777777778vh);
   padding: min(0.5555555556vw, 0.8888888889vh);
-  background: var(--crema);
+  background: var(--color-tarjeta);
 }
 .release img {
   width: min(4.1666666667vw, 6.6666666667vh);
@@ -327,7 +370,7 @@ button {
   text-transform: uppercase;
   align-self: flex-start;
   font-size: min(0.6944444444vw, 1.1111111111vh);
-  color: var(--fucsia);
+  color: var(--color-acento);
   border-bottom: 1px solid currentColor;
 }
 
@@ -335,7 +378,7 @@ button {
   display: grid;
   place-items: center;
   height: 100vh;
-  background: var(--crema);
+  background: var(--color-tarjeta);
 }
 .next p {
   font-size: min(0.7638888889vw, 1.2222222222vh);
