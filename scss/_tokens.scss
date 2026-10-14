@@ -15,18 +15,6 @@ $base-h: 900;
   @return min(#{math.div($px, $base-w) * 100}vw, #{math.div($px, $base-h) * 100}vh);
 }
 
-// Grano cinematográfico (pseudo-elemento a pantalla completa)
-@mixin grano($z: 9) {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: $z;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: var(--grano-opacidad);
-  mix-blend-mode: multiply;
-  pointer-events: none;
-}
-
 // Texto pequeño de interfaz (barra, pie, listas)
 @mixin micro {
   font-size: fl(11);
@@ -56,8 +44,6 @@ $base-h: 900;
   --color-boton-video-icono: var(--blanco);
   --color-tarjeta: var(--blanco);       // tarjeta del single
   --color-sobre-foto: var(--blanco);    // barra cuando la foto cubre todo
-  --color-eclipse: var(--noche);        // sombra que cruza la luna
-  --color-corona: var(--magenta);       // brillo en la totalidad
   --grano-opacidad: 0.04;
 
   --gutter: #{fl(32)};
