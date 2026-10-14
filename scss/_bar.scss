@@ -1,0 +1,52 @@
+@use "tokens" as *;
+
+// Barra superior: logo · navegación · booking
+.bar {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: fl(24) var(--gutter) 0;
+
+  &__logo {
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    gap: fl(8);
+    font-size: fl(15);
+    font-weight: 900;
+    font-variation-settings: "wdth" 125;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+
+    svg {
+      width: fl(20);
+      fill: var(--fucsia);
+    }
+  }
+
+  &__nav {
+    @include micro;
+    display: flex;
+    gap: fl(32);
+
+    a:hover {
+      color: var(--fucsia);
+    }
+  }
+
+  &__booking {
+    @include micro;
+    justify-self: end;
+    display: inline-flex;
+    gap: fl(10);
+    padding: fl(7) fl(12);
+    border: 1px solid currentColor;
+
+    &:hover {
+      color: var(--fucsia);
+    }
+  }
+}

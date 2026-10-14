@@ -1,0 +1,42 @@
+@use "sass:math";
+
+// ─── Paleta (portada "Pichoncita") ─────────────────────────────────────
+$chicle: #ff9ec5;    // fondo
+$fucsia: #f2185e;    // firma, acentos
+$crema: #fff6ee;     // nombre gigante
+$lima: #dcff5c;      // detalle puntual
+$tinta: #4a0f2b;     // texto
+
+// ─── Tipografía ────────────────────────────────────────────────────────
+$font-sans: "Archivo", system-ui, sans-serif;
+$font-sign: "Herr Von Muellerhoff", cursive;
+
+// ─── Escala fluida desktop (lienzo base 1440×900) ───────────────────────
+$base-w: 1440;
+$base-h: 900;
+
+@function fl($px) {
+  @if $px < 0 {
+    @return calc(-1 * #{fl(-$px)});
+  }
+  @return min(#{math.div($px, $base-w) * 100}vw, #{math.div($px, $base-h) * 100}vh);
+}
+
+// Texto pequeño de interfaz (barra, pie, listas)
+@mixin micro {
+  font-size: fl(11);
+  font-weight: 600;
+  font-variation-settings: "wdth" 108;
+  letter-spacing: 0.05em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+:root {
+  --chicle: #{$chicle};
+  --fucsia: #{$fucsia};
+  --crema: #{$crema};
+  --lima: #{$lima};
+  --tinta: #{$tinta};
+  --gutter: #{fl(32)};
+}

@@ -1,0 +1,347 @@
+:root {
+  --chicle: #ff9ec5;
+  --fucsia: #f2185e;
+  --crema: #fff6ee;
+  --lima: #dcff5c;
+  --tinta: #4a0f2b;
+  --gutter: min(2.2222222222vw, 3.5555555556vh);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: "Archivo", system-ui, sans-serif;
+  color: var(--tinta);
+  background: var(--chicle);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.label {
+  font-size: min(0.7638888889vw, 1.2222222222vh);
+  font-weight: 600;
+  font-variation-settings: "wdth" 108;
+  letter-spacing: 0.05em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: min(0.8333333333vw, 1.3333333333vh);
+  font-size: min(0.6944444444vw, 1.1111111111vh);
+  color: var(--fucsia);
+}
+
+.bar {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: min(1.6666666667vw, 2.6666666667vh) var(--gutter) 0;
+}
+.bar__logo {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: min(0.5555555556vw, 0.8888888889vh);
+  font-size: min(1.0416666667vw, 1.6666666667vh);
+  font-weight: 900;
+  font-variation-settings: "wdth" 125;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.bar__logo svg {
+  width: min(1.3888888889vw, 2.2222222222vh);
+  fill: var(--fucsia);
+}
+.bar__nav {
+  font-size: min(0.7638888889vw, 1.2222222222vh);
+  font-weight: 600;
+  font-variation-settings: "wdth" 108;
+  letter-spacing: 0.05em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  display: flex;
+  gap: min(2.2222222222vw, 3.5555555556vh);
+}
+.bar__nav a:hover {
+  color: var(--fucsia);
+}
+.bar__booking {
+  font-size: min(0.7638888889vw, 1.2222222222vh);
+  font-weight: 600;
+  font-variation-settings: "wdth" 108;
+  letter-spacing: 0.05em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  justify-self: end;
+  display: inline-flex;
+  gap: min(0.6944444444vw, 1.1111111111vh);
+  padding: min(0.4861111111vw, 0.7777777778vh) min(0.8333333333vw, 1.3333333333vh);
+  border: 1px solid currentColor;
+}
+.bar__booking:hover {
+  color: var(--fucsia);
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 720px;
+  overflow: hidden;
+  background: var(--chicle);
+}
+.hero__name {
+  position: absolute;
+  z-index: 1;
+  top: min(5.8333333333vw, 9.3333333333vh);
+  left: 0;
+  right: 0;
+  font-size: min(21.8055555556vw, 34.8888888889vh);
+  font-weight: 900;
+  font-variation-settings: "wdth" 100;
+  line-height: 0.74;
+  letter-spacing: -0.06em;
+  text-indent: -0.06em;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--crema);
+  white-space: nowrap;
+}
+.hero__signature {
+  position: absolute;
+  z-index: 4;
+  top: min(6.6666666667vw, 10.6666666667vh);
+  left: min(13.1944444444vw, 21.1111111111vh);
+  font-family: "Herr Von Muellerhoff", cursive;
+  font-size: min(17.3611111111vw, 27.7777777778vh);
+  line-height: 1;
+  color: var(--fucsia);
+  transform: rotate(-9deg);
+  pointer-events: none;
+}
+.hero__photo {
+  position: absolute;
+  z-index: 2;
+  top: min(18.75vw, 30vh);
+  left: 50%;
+  width: min(24.3055555556vw, 38.8888888889vh);
+  transform: translateX(-50%);
+}
+.hero__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1067/1474;
+  overflow: hidden;
+  background: var(--tinta);
+}
+.hero__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+}
+.hero__media img:last-child {
+  object-position: 50% 23%;
+}
+.hero__caption {
+  font-size: min(0.7638888889vw, 1.2222222222vh);
+  font-weight: 600;
+  font-variation-settings: "wdth" 108;
+  letter-spacing: 0.05em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  margin-top: min(0.5555555556vw, 0.8888888889vh);
+  font-size: min(0.6944444444vw, 1.1111111111vh);
+}
+.hero__caption span:first-child {
+  opacity: 0.6;
+}
+.hero__caption b {
+  font-weight: 700;
+  color: var(--fucsia);
+}
+.hero__watch {
+  font-size: min(0.7638888889vw, 1.2222222222vh);
+  font-weight: 600;
+  font-variation-settings: "wdth" 108;
+  letter-spacing: 0.05em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 3;
+  top: min(32.6388888889vw, 52.2222222222vh);
+  right: calc(50% + min(13.8888888889vw, 22.2222222222vh));
+  flex-direction: row-reverse;
+  display: inline-flex;
+  align-items: center;
+  gap: min(0.6944444444vw, 1.1111111111vh);
+}
+.hero__watch-dot {
+  display: grid;
+  place-items: center;
+  width: min(2.0833333333vw, 3.3333333333vh);
+  height: min(2.0833333333vw, 3.3333333333vh);
+  border-radius: 50%;
+  background: var(--crema);
+}
+.hero__watch-dot svg {
+  width: min(0.8333333333vw, 1.3333333333vh);
+  fill: var(--fucsia);
+}
+.hero__social {
+  font-size: min(0.7638888889vw, 1.2222222222vh);
+  font-weight: 600;
+  font-variation-settings: "wdth" 108;
+  letter-spacing: 0.05em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 3;
+  top: min(27.7777777778vw, 44.4444444444vh);
+  left: var(--gutter);
+  display: flex;
+  flex-direction: column;
+  gap: min(0.3472222222vw, 0.5555555556vh);
+}
+.hero__social a span {
+  display: inline-block;
+  width: min(1.9444444444vw, 3.1111111111vh);
+  color: var(--fucsia);
+}
+.hero__social a:hover {
+  color: var(--fucsia);
+}
+.hero__bio {
+  position: absolute;
+  z-index: 3;
+  top: min(27.7777777778vw, 44.4444444444vh);
+  right: var(--gutter);
+  width: min(22.9166666667vw, 36.6666666667vh);
+}
+.hero__lede {
+  margin-bottom: min(1.8055555556vw, 2.8888888889vh);
+  font-size: min(1.0416666667vw, 1.6666666667vh);
+  font-weight: 450;
+  line-height: 1.45;
+}
+.hero__cta {
+  font-size: min(0.7638888889vw, 1.2222222222vh);
+  font-weight: 600;
+  font-variation-settings: "wdth" 108;
+  letter-spacing: 0.05em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: min(0.5555555556vw, 0.8888888889vh);
+  border-bottom: 1px solid currentColor;
+}
+.hero__cta span {
+  color: var(--fucsia);
+}
+.hero__foot {
+  font-size: min(0.7638888889vw, 1.2222222222vh);
+  font-weight: 600;
+  font-variation-settings: "wdth" 108;
+  letter-spacing: 0.05em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  position: absolute;
+  left: var(--gutter);
+  right: var(--gutter);
+  bottom: min(1.25vw, 2vh);
+  display: flex;
+  justify-content: space-between;
+  font-size: min(0.625vw, 1vh);
+  opacity: 0.6;
+}
+
+.release {
+  position: absolute;
+  z-index: 3;
+  left: var(--gutter);
+  bottom: min(3.1944444444vw, 5.1111111111vh);
+  display: flex;
+  align-items: center;
+  gap: min(0.8333333333vw, 1.3333333333vh);
+  width: min(17.3611111111vw, 27.7777777778vh);
+  padding: min(0.5555555556vw, 0.8888888889vh);
+  background: var(--crema);
+}
+.release img {
+  width: min(4.1666666667vw, 6.6666666667vh);
+  height: min(4.1666666667vw, 6.6666666667vh);
+  object-fit: cover;
+}
+.release__text {
+  display: flex;
+  flex-direction: column;
+  gap: min(0.2777777778vw, 0.4444444444vh);
+  font-size: min(0.8333333333vw, 1.3333333333vh);
+  font-weight: 500;
+  line-height: 1.3;
+}
+.release__text em {
+  font-style: normal;
+  font-size: min(1.0416666667vw, 1.6666666667vh);
+  font-weight: 700;
+}
+.release__link {
+  font-size: min(0.7638888889vw, 1.2222222222vh);
+  font-weight: 600;
+  font-variation-settings: "wdth" 108;
+  letter-spacing: 0.05em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  align-self: flex-start;
+  font-size: min(0.6944444444vw, 1.1111111111vh);
+  color: var(--fucsia);
+  border-bottom: 1px solid currentColor;
+}
+
+.next {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: var(--crema);
+}
+.next p {
+  font-size: min(0.7638888889vw, 1.2222222222vh);
+  font-weight: 600;
+  font-variation-settings: "wdth" 108;
+  letter-spacing: 0.05em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
