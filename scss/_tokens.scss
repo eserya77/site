@@ -26,39 +26,25 @@ $base-h: 900;
 }
 
 :root {
-  // ─── Paleta base: "luz de luna" (bio_killary.md) ────────────────────
+  // ─── Paleta base ────────────────────────────────────────────────────
   // Cambiar la paleta = cambiar estos valores.
-  --luna: #eceaf1;       // plata lunar clara
+  --hueso: #f3eee7;      // neutro cálido
   --noche: #15163a;      // azul noche
-  --magenta: #e5007e;    // magenta eléctrico
-  --violeta: #6a2bd8;    // violeta psicodélico
-  --ambar: #ffb43a;      // destello cálido
+  --magenta: #e5007e;    // magenta eléctrico (único acento)
   --blanco: #ffffff;
-
-  // Plata cromada del nombre (de claro a oscuro y vuelta)
-  --plata-1: #ffffff;
-  --plata-2: #b8b4c6;
-  --plata-3: #8d88a0;
-  --plata-4: #e4e1ea;
+  --plata: #b8b4c6;      // reserva: detalles plateados (sellos, separadores)
 
   // ─── Roles: qué color usa cada cosa ─────────────────────────────────
-  --color-fondo: var(--luna);
+  --color-fondo: var(--hueso);
   --color-texto: var(--noche);
+  --color-nombre: var(--noche);         // KILLARY gigante
   --color-acento: var(--magenta);       // firma, números, hovers
-  --color-etiqueta: var(--violeta);     // Redes, Bio, Último single…
-  --color-calido: var(--ambar);         // botón de video
+  --color-etiqueta: var(--magenta);     // Redes, Bio, Último single…
+  --color-boton-video: var(--magenta);
+  --color-boton-video-icono: var(--blanco);
   --color-tarjeta: var(--blanco);       // tarjeta del single
   --color-sobre-foto: var(--blanco);    // barra cuando la foto cubre todo
-  --color-halo: var(--blanco);          // luz lunar detrás de la foto
-
-  --nombre-gradiente: linear-gradient(
-    180deg,
-    var(--plata-1) 8%,
-    var(--plata-2) 46%,
-    var(--plata-3) 60%,
-    var(--plata-4) 100%
-  );
-  --grano-opacidad: 0.06;
+  --grano-opacidad: 0.04;
 
   --gutter: #{fl(32)};
 }

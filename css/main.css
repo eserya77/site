@@ -1,30 +1,19 @@
 :root {
-  --luna: #eceaf1;
+  --hueso: #f3eee7;
   --noche: #15163a;
   --magenta: #e5007e;
-  --violeta: #6a2bd8;
-  --ambar: #ffb43a;
   --blanco: #ffffff;
-  --plata-1: #ffffff;
-  --plata-2: #b8b4c6;
-  --plata-3: #8d88a0;
-  --plata-4: #e4e1ea;
-  --color-fondo: var(--luna);
+  --plata: #b8b4c6;
+  --color-fondo: var(--hueso);
   --color-texto: var(--noche);
+  --color-nombre: var(--noche);
   --color-acento: var(--magenta);
-  --color-etiqueta: var(--violeta);
-  --color-calido: var(--ambar);
+  --color-etiqueta: var(--magenta);
+  --color-boton-video: var(--magenta);
+  --color-boton-video-icono: var(--blanco);
   --color-tarjeta: var(--blanco);
   --color-sobre-foto: var(--blanco);
-  --color-halo: var(--blanco);
-  --nombre-gradiente: linear-gradient(
-    180deg,
-    var(--plata-1) 8%,
-    var(--plata-2) 46%,
-    var(--plata-3) 60%,
-    var(--plata-4) 100%
-  );
-  --grano-opacidad: 0.06;
+  --grano-opacidad: 0.04;
   --gutter: min(2.2222222222vw, 3.5555555556vh);
 }
 
@@ -139,14 +128,6 @@ button {
   overflow: hidden;
   background: var(--color-fondo);
 }
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: radial-gradient(ellipse 42% 58% at 50% 60%, var(--color-halo) 0%, transparent 70%);
-  pointer-events: none;
-}
 .hero::after {
   content: "";
   position: absolute;
@@ -172,11 +153,7 @@ button {
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
-  color: transparent;
-  background: var(--nombre-gradiente);
-  -webkit-background-clip: text;
-  background-clip: text;
-  filter: drop-shadow(0 1px 0 var(--blanco)) drop-shadow(0 min(0.6944444444vw, 1.1111111111vh) min(1.6666666667vw, 2.6666666667vh) rgba(21, 22, 58, 0.12));
+  color: var(--color-nombre);
 }
 .hero__signature {
   position: absolute;
@@ -257,11 +234,11 @@ button {
   width: min(2.0833333333vw, 3.3333333333vh);
   height: min(2.0833333333vw, 3.3333333333vh);
   border-radius: 50%;
-  background: var(--color-calido);
+  background: var(--color-boton-video);
 }
 .hero__watch-dot svg {
   width: min(0.8333333333vw, 1.3333333333vh);
-  fill: var(--color-texto);
+  fill: var(--color-boton-video-icono);
 }
 .hero__social {
   font-size: min(0.7638888889vw, 1.2222222222vh);

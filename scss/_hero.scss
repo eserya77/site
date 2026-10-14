@@ -9,20 +9,6 @@ $photo-w: fl(350);
   overflow: hidden;
   background: var(--color-fondo);
 
-  // Luz lunar detrás de la foto
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background: radial-gradient(
-      ellipse 42% 58% at 50% 60%,
-      var(--color-halo) 0%,
-      transparent 70%
-    );
-    pointer-events: none;
-  }
-
   // Grano cinematográfico sobre todo (menos la barra)
   &::after {
     content: "";
@@ -51,12 +37,7 @@ $photo-w: fl(350);
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
-    // Plata cromada
-    color: transparent;
-    background: var(--nombre-gradiente);
-    -webkit-background-clip: text;
-    background-clip: text;
-    filter: drop-shadow(0 1px 0 var(--blanco)) drop-shadow(0 #{fl(10)} #{fl(24)} rgba(21, 22, 58, 0.12));
+    color: var(--color-nombre);
   }
 
   // ─── Firma manuscrita ───────────────────────────────────────────────
@@ -142,11 +123,11 @@ $photo-w: fl(350);
       width: fl(30);
       height: fl(30);
       border-radius: 50%;
-      background: var(--color-calido);
+      background: var(--color-boton-video);
 
       svg {
         width: fl(12);
-        fill: var(--color-texto);
+        fill: var(--color-boton-video-icono);
       }
     }
   }
